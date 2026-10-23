@@ -2,8 +2,10 @@ import React from "react";
 import "../css/app.css";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
-import { About } from "./screens/About";
-import { Users } from "./screens/Users";
+import { Home } from "./screens/homePage";
+import { ProductsPage } from "./screens/productsPage";
+import { OrdersPage } from "./screens/ordersPage";
+import { UserPage } from "./screens/userPage";
 
 
 function App() {
@@ -14,23 +16,29 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Homepage</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/products">ProductsPage</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/orders">OrdersPage</Link>
+            </li>
+            <li>
+              <Link to="/member-page">Userpage</Link>
             </li>
           </ul>
         </nav>
 
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/products">
+            <ProductsPage />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/orders">
+            <OrdersPage />
+          </Route>
+          <Route path="/member-page">
+            <UserPage />
           </Route>
           <Route path="/">
             <Home />
@@ -41,9 +49,6 @@ function App() {
   );
 };
 
-function Home() {
-  return <Container>Home</Container>;
-}
 
 
 
