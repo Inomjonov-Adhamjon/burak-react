@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import { BrowserRouter, Link, Route, Switch, useLocation } from "react-router-dom";
-import { Home } from "./screens/homePage";
+import { Link, Route, Switch, useLocation } from "react-router-dom";
+import { Homepage } from "./screens/homePage";
 import { ProductsPage } from "./screens/productsPage";
 import { OrdersPage } from "./screens/ordersPage";
 import { UserPage } from "./screens/userPage";
@@ -12,44 +12,33 @@ import "../css/app.css";
 import "../css/navbar.css"
 import { HelpPage } from "./screens/helpPage";
 
-
 function App() {
   const location = useLocation();
-  console.log("location", location)
+  console.log("location:", location);
+
   return (
-    <BrowserRouter>
-      <>
-        {location.pathname === "/" ? <HomeNavbar /> : <OtherNavbar />}
-        <Switch>
-          <Route path="/products">
-            <ProductsPage />
-          </Route>
-          <Route path="/orders">
-            <OrdersPage />
-          </Route>
-          <Route path="/member-page">
-            <UserPage />
-          </Route>
-          <Route path="/help">
-            <HelpPage />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-        <Footer />
-      </>
-    </BrowserRouter>
+    <>
+      {location.pathname === "/" ? <HomeNavbar /> : < OtherNavbar />}
+      <Switch>
+        <Route path="/products">
+          <ProductsPage />
+        </Route>
+        <Route path="/orders">
+          <OrdersPage />
+        </Route>
+        <Route path="/member-page">
+          <UserPage />
+        </Route>
+        <Route path="/help">
+          <HelpPage />
+        </Route>
+        <Route path="/">
+          <Homepage />
+        </Route>
+      </Switch>
+      <Footer />
+    </>
   );
-};
-
-
-
-
+}
 
 export default App;
-
-
-
-
-
