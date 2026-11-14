@@ -11,11 +11,11 @@ export default function HomeNavbar() {
 
 
     useEffect(() => {
-        console.log("componentDidMount", count) // DATA fetching
+        // console.log("componentDidMount", count) // DATA fetching
         setCount(count + 1)
 
         return () => {
-            console.log("componentWillUnmount")
+            // console.log("componentWillUnmount")
         }
 
     }, [value])   // Array Dependancy

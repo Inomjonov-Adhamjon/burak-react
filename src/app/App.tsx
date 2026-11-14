@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { Link, Route, Switch, useLocation } from "react-router-dom";
-import Homepage from "./screens/homePage";
+import HomePage from "./screens/homePage";
 import ProductsPage from "./screens/productsPage";
 import OrdersPage from "./screens/ordersPage";
 import UserPage from "./screens/userPage";
@@ -12,7 +12,7 @@ import Footer from "./components/footer";
 import "../css/app.css";
 import "../css/navbar.css"
 import "../css/footer.css"
-import Test from "./screens/Test";
+// import Test from "./screens/Test";
 
 function App() {
   const location = useLocation();
@@ -35,7 +35,7 @@ function App() {
           <HelpPage />
         </Route>
         <Route path="/">
-          <Homepage />
+          <HomePage />
           {/* <Test /> */}
         </Route>
       </Switch>
