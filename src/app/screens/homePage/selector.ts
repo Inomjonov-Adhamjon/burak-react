@@ -1,11 +1,11 @@
 import { createSelector } from "reselect";
 import { AppRootState } from "../../../lib/types/screen";
 
-
+// Input Selector: homePage state'ini oladi
 const selectHomePage = (state: AppRootState) => state.homePage;
 export const retrievePopularDishes = createSelector(
-    selectHomePage,
-    (HomePage) => HomePage.popularDishes
+    selectHomePage,  // Input Selector
+    (HomePage) => HomePage.popularDishes // Result Function
 );
 
 
